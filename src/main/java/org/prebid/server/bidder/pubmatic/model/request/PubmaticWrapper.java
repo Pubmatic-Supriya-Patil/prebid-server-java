@@ -1,11 +1,15 @@
 package org.prebid.server.bidder.pubmatic.model.request;
 
-import lombok.Value;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import lombok.AllArgsConstructor;
+import lombok.Data;
 
-@Value(staticConstructor = "of")
+@Data
+@AllArgsConstructor(staticName = "of")
+@JsonInclude(JsonInclude.Include.NON_EMPTY)
 public class PubmaticWrapper {
 
-    Integer profile;
+    private Integer profile;
 
-    Integer version;
+    private Integer version;
 }

@@ -1,8 +1,10 @@
 package org.prebid.server.proto.openrtb.ext.request.pubmatic;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Value;
+import lombok.Data;
 import org.prebid.server.bidder.pubmatic.model.request.PubmaticWrapper;
 
 import java.util.List;
@@ -14,11 +16,13 @@ import java.util.List;
  * WrapExt needs to be sent once per bid request
  */
 @Builder
-@Value
+@Data
+@AllArgsConstructor(staticName = "of")
+@JsonInclude(JsonInclude.Include.NON_EMPTY)
 public class ExtImpPubmatic {
 
     @JsonProperty("publisherId")
-    String publisherId;
+    private String publisherId;
 
     @JsonProperty("adSlot")
     String adSlot;
@@ -28,7 +32,7 @@ public class ExtImpPubmatic {
     @JsonProperty("pmzoneid")
     String pmZoneId;
 
-    PubmaticWrapper wrapper;
+    private PubmaticWrapper wrapper;
 
     List<ExtImpPubmaticKeyVal> keywords;
 

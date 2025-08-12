@@ -9,12 +9,12 @@
           "price": 4.75,
           "adm": "adm9",
           "crid": "crid9",
-          "mtype": "2",
+          "mtype": 2,
           "w": 300,
           "h": 600
         }
       ],
-      "seat": "seatId9",
+      "seat": "pubmatic",
       "group": 0
     }
   ]

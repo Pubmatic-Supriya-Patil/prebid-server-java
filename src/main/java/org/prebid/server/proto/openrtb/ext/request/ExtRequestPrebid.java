@@ -4,8 +4,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.node.ObjectNode;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Value;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.prebid.server.auction.model.PaaFormat;
 import org.prebid.server.floors.model.PriceFloorRules;
 import org.prebid.server.json.deserializer.IntegerFlagDeserializer;
@@ -17,7 +19,9 @@ import java.util.Map;
  * Defines the contract for bidrequest.ext.prebid
  */
 @Builder(toBuilder = true)
-@Value
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class ExtRequestPrebid {
 
     /**
@@ -192,5 +196,14 @@ public class ExtRequestPrebid {
     PaaFormat paaFormat;
 
     @JsonProperty("alternatebiddercodes")
-    ExtRequestPrebidAlternateBidderCodes alternateBidderCodes;
+    private ExtRequestPrebidAlternateBidderCodes alternateBidderCodes;
+
+    public ExtRequestPrebidAlternateBidderCodes getAlternateBidderCodes() {
+        return alternateBidderCodes;
+    }
+
+    public void setAlternateBidderCodes(ExtRequestPrebidAlternateBidderCodes alternateBidderCodes) {
+        this.alternateBidderCodes = alternateBidderCodes;
+    }
+
 }

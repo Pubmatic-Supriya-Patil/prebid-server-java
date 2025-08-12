@@ -6,7 +6,7 @@
       "secure": 1,
       "video": {
         "mimes": [
-          "mimes"
+          "video/mp4"
         ],
         "w": 300,
         "h": 600

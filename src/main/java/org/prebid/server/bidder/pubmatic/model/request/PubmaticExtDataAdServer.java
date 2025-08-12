@@ -1,9 +1,13 @@
 package org.prebid.server.bidder.pubmatic.model.request;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.Value;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-@Value(staticConstructor = "of")
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class PubmaticExtDataAdServer {
 
     String name;
